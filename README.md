@@ -52,17 +52,17 @@ _(IAM Role attached to EC2 enables secure, credential-free access)_
 
 ## 📸 Screenshots
 
-### EC2 Upload Command
+### Upload from EC2
 
-"EC2 Upload" (screenshots/ec2-upload.png)
+![EC2 Upload](screenshots/ec2-upload-command.png)
 
 ### File in S3 Bucket
 
-"S3 File" (screenshots/s3-file.png)
+![S3 File](screenshots/file-in-s3-bucket.png)
 
-### IAM Role Configuration
+### IAM Role Attached
 
-"IAM Role" (screenshots/iam-role.png)
+![IAM Role](screenshots/iam-role-attached-to-ec2.png)
 
 ---
 <br/>

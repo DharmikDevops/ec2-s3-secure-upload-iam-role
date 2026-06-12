@@ -4,42 +4,17 @@
 
 This project demonstrates a secure method for enabling an EC2 instance to upload files to an S3 bucket using IAM Roles, without storing any access keys or credentials.
 
-It follows AWS best practices such as **least privilege access** and **temporary credential usage**.
+The solution follows AWS security best practices by using temporary credentials and applying the principle of least privilege.
 
 ---
-<br/>
 
-## 🏗️ Architecture
+## 🏗️ Architecture Diagram
 
 ![Architecture Diagram](architecture/architecture-diagram.png)
 
 ---
-<br/>
 
-## 🚀 Key Features
-
-- 🔒 No hardcoded AWS credentials
-- ⏳ Uses temporary credentials via IAM Role
-- 🛡️ Implements least privilege principle
-- ⚙️ Uses AWS CLI for file upload
-- 📁 Clear separation of compute (EC2) and storage (S3)
-
----
-<br/>
-
-## 🧠 How It Works
-
-1. An IAM Role is created with S3 access permissions
-2. The role is attached to an EC2 instance
-3. EC2 automatically receives temporary credentials
-4. A file is created inside EC2
-5. AWS CLI is used to upload the file to S3
-6. The file is securely stored in the S3 bucket
-
----
-<br/>
-
-## 🛠️ Services Used
+## 🛠️ AWS Services Used
 
 - AWS EC2
 - AWS S3
@@ -47,7 +22,30 @@ It follows AWS best practices such as **least privilege access** and **temporary
 - AWS CLI
 
 ---
-<br/>
+
+## 🧠 How It Works
+
+1. An IAM Role is created with the required S3 permissions.
+2. The role is attached to an EC2 instance.
+3. EC2 automatically receives temporary credentials from AWS.
+4. A file is created inside the EC2 instance.
+5. AWS CLI is used to upload the file to the S3 bucket.
+6. The file is securely stored in the S3 bucket.
+
+---
+
+## ⚙️ Implementation Steps
+
+1. Created an S3 bucket.
+2. Created an IAM Policy with the required S3 permissions.
+3. Created an IAM Role and attached the policy.
+4. Attached the IAM Role to the EC2 instance.
+5. Connected to the EC2 instance using SSH.
+6. Created a test file.
+7. Uploaded the file to the S3 bucket using AWS CLI.
+8. Verified that the file was uploaded successfully.
+
+---
 
 ## 📸 Screenshots
 
@@ -64,31 +62,18 @@ It follows AWS best practices such as **least privilege access** and **temporary
 ![IAM Role](screenshots/iam-role-attached-to-ec2.png)
 
 ---
-<br/>
 
 ## 🔐 Security Best Practices
 
-- No access keys or passwords used
-- IAM Role used instead of IAM User credentials
-- Temporary credentials automatically managed by AWS
-- Minimal required permissions applied (least privilege)
+- No access keys or passwords stored on the EC2 instance.
+- IAM Role used instead of IAM User credentials.
+- Temporary credentials automatically managed by AWS.
+- Only the required permissions are granted (least privilege).
 
 ---
-<br/>
-
-## 🚀 What This Project Demonstrates
-
-- Implementation of IAM Roles for secure service access
-- Use of temporary credentials instead of hardcoded keys
-- Application of least privilege principle
-- Secure interaction between AWS services (EC2 and S3)
-- Understanding of real-world cloud architecture patterns
-
----
-<br/>
 
 ## 💼 Real-World Use Case
 
-This architecture is commonly used in production systems where applications running on EC2 need to securely upload logs, images, backups, or other files to S3 without exposing credentials.
+This architecture is commonly used in production environments where applications running on EC2 need to upload logs, backups, reports, images, or other files to S3 without exposing AWS credentials.
 
 ---

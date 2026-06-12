@@ -11,8 +11,7 @@ It follows AWS best practices such as **least privilege access** and **temporary
 
 ## 🏗️ Architecture
 
-EC2 Instance → S3 Bucket
-_(IAM Role attached to EC2 enables secure, credential-free access)_
+![Architecture Diagram](architecture/architecture-diagram.png)
 
 ---
 <br/>
